@@ -7,8 +7,6 @@ const getIsGreaterService = async ({ lat, lon, units, tempToCompare }) => {
     );
     const data = await response.json();
 
-    console.log({ data, tempToCompare });
-
     const isGreater = data?.current?.temp > tempToCompare;
 
     return { isGreater };

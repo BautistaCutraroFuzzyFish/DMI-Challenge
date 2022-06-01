@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "prettier:format": "prettier --write .",
+    "prettier": "prettier --check ."
   },
   "repository": {
     "type": "git",
