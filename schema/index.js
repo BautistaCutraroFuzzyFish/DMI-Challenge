@@ -1,3 +1,14 @@
+const errorResponse = {
+  type: 'object',
+  properties: {
+    error: {
+      type: 'string',
+      description: 'Error message'
+    }
+  },
+  required: ['error']
+};
+
 const getIsGreaterSchema = {
   title: 'Is Greater',
   querystring: {
@@ -19,10 +30,14 @@ const getIsGreaterSchema = {
       type: 'object',
       properties: {
         isGreater: {
-          type: 'boolean'
+          type: 'boolean',
+          description: 'Is the temperature greater than the tempToCompare'
         }
-      }
-    }
+      },
+      required: ['isGreater']
+    },
+    '4xx': errorResponse,
+    '5xx': errorResponse
   }
 };
 

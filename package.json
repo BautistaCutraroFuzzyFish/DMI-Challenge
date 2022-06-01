@@ -1,5 +1,5 @@
 {
-  "name": "DMI-Challenge",
+  "name": "dmi-challenge",
   "version": "1.0.0",
   "description": "DMI Backend Challenge",
   "main": "server.js",

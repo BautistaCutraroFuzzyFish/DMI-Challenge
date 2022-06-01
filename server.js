@@ -7,7 +7,7 @@ const swagger = require('./utils/swagger');
 fastify.register(require('fastify-env'), enviroment.options);
 
 // swagger
-fastify.register(require('fastify-swagger', swagger.options));
+fastify.register(require('fastify-swagger'), swagger.options);
 
 // routes
 fastify.register(require('./routes'));
