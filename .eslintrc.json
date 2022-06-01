@@ -5,6 +5,7 @@
     "es2021": true
   },
   "extends": ["standard"],
+  "plugins": ["prettier", "jest"],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
