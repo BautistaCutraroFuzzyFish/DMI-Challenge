@@ -33,13 +33,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
-    "husky": "^8.0.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && concurrently npm:lint"
-    }
   }
 }
