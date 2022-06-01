@@ -10,7 +10,7 @@ $ npm i
 ```
 # Running the app
 
-- Create .env file with these variables
+- Create ``.env`` file with these variables
 ```js
 API_URL=<your-api-url>
 API_KEY=<your-api-key>
