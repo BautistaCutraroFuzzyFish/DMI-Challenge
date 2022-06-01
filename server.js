@@ -1,36 +1,13 @@
 const fastify = require('fastify')({ logger: true });
 const PORT = 3000;
+const enviroment = require('./utils/enviroment');
+const swagger = require('./utils/swagger');
 
-// ENV
-fastify.register(require('fastify-env'), {
-  dotenv: true,
-  schema: {
-    type: 'object',
-    properties: {
-      API_URL: {
-        type: 'string',
-        default: ''
-      },
-      API_KEY: {
-        type: 'string',
-        default: ''
-      }
-    }
-  }
-});
+// enviroment variables
+fastify.register(require('fastify-env'), enviroment.options);
 
 // swagger
-fastify.register(require('fastify-swagger'), {
-  exposeRoute: true,
-  routePrefix: '/docs',
-  swagger: {
-    info: {
-      title: 'Weather API',
-      description: 'A simple weather API',
-      version: '0.1.0'
-    }
-  }
-});
+fastify.register(require('fastify-swagger', swagger.options));
 
 // routes
 fastify.register(require('./routes'));
