@@ -27,7 +27,7 @@ API_URL=<your-api-url>
 API_KEY=<your-api-key>
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
-REDIS_CACHE_TTL=60000
+REDIS_CACHE_TTL=600000
 ```
 
 - Run the proyect
