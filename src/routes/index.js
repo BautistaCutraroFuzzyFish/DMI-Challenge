@@ -1,14 +1,12 @@
-const { getIsGreaterController } = require('../controllers');
-const { getIsGreaterSchema } = require('../schema');
-
-// options
-const isGreaterOpts = {
-  schema: getIsGreaterSchema,
-  handler: getIsGreaterController
-};
+const schema = require('../schemas');
 
 const weatherRoutes = (fastify, _options, done) => {
-  fastify.get('/is-greater', isGreaterOpts);
+  const controller = require('../controllers')(fastify);
+
+  fastify.get('/is-greater', {
+    schema: schema.getIsGreaterSchema,
+    handler: controller.getIsGreaterController
+  });
 
   done();
 };
