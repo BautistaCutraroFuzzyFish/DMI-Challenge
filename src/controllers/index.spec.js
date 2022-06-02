@@ -1,7 +1,7 @@
-const { getIsGreaterController } = require('.');
+const controller = require('../controllers')({});
 
-jest.mock('../services', () => ({
-  getIsGreaterService: jest.fn(() => ({
+jest.mock('../middlewares', () => ({
+  cacheMiddleware: jest.fn(() => ({
     data: { isGreater: true, status: 200 },
     status: 200
   }))
@@ -28,7 +28,7 @@ describe('weather controller', () => {
   });
 
   it('should return status code 200 and isGreater in true', async () => {
-    await getIsGreaterController(req, reply);
+    await controller.getIsGreaterController(req, reply);
     expect(codeMock).toHaveBeenCalledTimes(1);
     expect(codeMock).toHaveBeenCalledWith(200);
 

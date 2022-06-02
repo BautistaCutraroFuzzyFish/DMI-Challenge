@@ -1,4 +1,4 @@
-const cacheMiddleware = require('../middlewares');
+const cache = require('../middlewares');
 
 const cacheValue = JSON.stringify({
   item: {
@@ -56,7 +56,7 @@ describe('Cache middleware', () => {
   describe('should return cached value', () => {
     let response;
     beforeEach(async () => {
-      response = await cacheMiddleware(
+      response = await cache.cacheMiddleware(
         fastifyMock,
         fnMock,
         { paramOne: 'param' },
@@ -72,7 +72,7 @@ describe('Cache middleware', () => {
 
   describe('should throw an error on get value from cache', () => {
     beforeEach(async () => {
-      await cacheMiddleware(
+      await cache.cacheMiddleware(
         fastifyMock,
         fnMock,
         { paramOne: 'param' },
@@ -92,7 +92,7 @@ describe('Cache middleware', () => {
   describe('should get the value and save to cache', () => {
     let response;
     beforeEach(async () => {
-      response = await cacheMiddleware(
+      response = await cache.cacheMiddleware(
         fastifyMock,
         fnMock,
         { paramOne: 'param' },
@@ -115,7 +115,7 @@ describe('Cache middleware', () => {
 
   describe('should throw an error on set value in cache', () => {
     beforeEach(async () => {
-      await cacheMiddleware(
+      await cache.cacheMiddleware(
         fastifyMock,
         fnMock,
         { paramOne: 'param' },

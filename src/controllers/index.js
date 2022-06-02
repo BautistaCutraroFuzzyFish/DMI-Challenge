@@ -1,12 +1,12 @@
 const services = require('../services');
-const cacheMiddleware = require('../middlewares');
+const cache = require('../middlewares');
 
 module.exports = fastify => {
   const getIsGreaterController = async (req, reply) => {
     const { query } = req;
     const cacheKey = `${query.lat}${query.lon}`;
 
-    const response = await cacheMiddleware(
+    const response = await cache.cacheMiddleware(
       fastify,
       services.getIsGreaterService,
       query,

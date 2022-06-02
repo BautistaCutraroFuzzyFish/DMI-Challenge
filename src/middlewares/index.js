@@ -25,4 +25,4 @@ const cacheMiddleware = async (fastify, fn, params, cacheKey) => {
   return value;
 };
 
-module.exports = cacheMiddleware;
+module.exports = { cacheMiddleware };
