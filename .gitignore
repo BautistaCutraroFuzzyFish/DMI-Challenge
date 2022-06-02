@@ -1,4 +1,4 @@
 node_modules/
 .env
 coverage/
-app/db/data/dump.rdb
+app/db/data/
