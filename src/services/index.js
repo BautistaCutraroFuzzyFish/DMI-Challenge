@@ -3,11 +3,9 @@ const fetch = require('node-fetch');
 const getIsGreaterService = async ({ lat, lon, units, tempToCompare }) => {
   try {
     const response = await fetch(
-      `${process.env.API_URL}data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&exclude=hourly,daily&appid=${process.env.API_KEY}`
+      `${process.env.API_URL}data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&exclude=hourly,daily,minutely,alerts&appid=${process.env.API_KEY}`
     );
     const data = await response.json();
-
-    const isGreater = data?.current?.temp > tempToCompare;
 
     if (!response.ok) {
       const error = new Error();
@@ -15,6 +13,8 @@ const getIsGreaterService = async ({ lat, lon, units, tempToCompare }) => {
       error.message = data.message;
       throw error;
     }
+
+    const isGreater = data?.current?.temp > tempToCompare;
 
     return { status: 200, data: { isGreater } };
   } catch (e) {

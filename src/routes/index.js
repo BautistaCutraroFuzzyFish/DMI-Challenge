@@ -7,10 +7,10 @@ const isGreaterOpts = {
   handler: getIsGreaterController
 };
 
-function weatherRoutes(fastify, _options, done) {
-  fastify.get('/isGreater', isGreaterOpts);
+const weatherRoutes = (fastify, _options, done) => {
+  fastify.get('/is-greater', isGreaterOpts);
 
   done();
-}
+};
 
 module.exports = weatherRoutes;
