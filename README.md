@@ -19,7 +19,7 @@ $ npm i
 docker-compose up
 ```
 
-# Running the app
+# Running the application
 
 - Create ``.env`` file with these variables
 ```js
