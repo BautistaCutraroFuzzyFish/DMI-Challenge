@@ -11,7 +11,7 @@ First, install Node.js, Docker & Postman
 
 # Installation
 ```bash
-$ npm i
+$ npm install
 ```
 
 # Start Redis
