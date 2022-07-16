@@ -3,7 +3,7 @@
 This is a challenge from DMI on backend skills
 
 # Get Started
-First, install Node.js, Docker & Postman.
+First, install Node.js, Docker & Postman
 
 - [Click here to download Node.js](https://nodejs.org)
 - [Click here to download Docker](https://docs.docker.com/desktop/mac/install/)
